@@ -1,4 +1,4 @@
-package com.url.shortner.security;
+package com.url.shortner.security.jwt;
 
 import com.url.shortner.service.UserDetailsImpl;
 import io.jsonwebtoken.JwtException;
