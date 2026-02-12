@@ -24,10 +24,11 @@ public class JwtUtils {
     private int jwtExpirationMs;
 
     public String getJwtFromHeader(HttpServletRequest request) {
-        String bearerToken=request.getHeader("Authorization");
-        if(bearerToken !=null && bearerToken.startsWith("Bearer "))
-            return bearerToken;
-       return null;
+        String bearerToken = request.getHeader("Authorization");
+        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
+            return bearerToken.substring(7); // Extracts only the token part
+        }
+        return null;
     }
 
     public String generateToken(UserDetailsImpl userDetails){
